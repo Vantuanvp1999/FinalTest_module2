@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class ContactManager implements IManager<Contact> {
-public static final String FILE_NAME="contacts.csv";
+public static final String FILE_NAME="contacts.dat";
 private static File file = new File(FILE_NAME);
 private List<Contact> contacts = new ArrayList<>();
 private Scanner scanner = new Scanner(System.in);
@@ -271,14 +271,14 @@ public void searchContact(){
 
     @Override
     public List<Contact> readFromCSV() {
-            contacts.clear();
         try {
             FileInputStream fis = new FileInputStream(file);
             ObjectInputStream ois = new ObjectInputStream(fis);
-            contacts= (List<Contact>) ois.readObject();
-            } catch (IOException | ClassNotFoundException ex) {
+            contacts= (ArrayList<Contact>) ois.readObject();
+        } catch (IOException | ClassNotFoundException ex) {
             ex.printStackTrace();
         }
         return contacts;
     }
+
 }
