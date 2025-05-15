@@ -35,7 +35,7 @@ public class Main {
                     break;
                 case "8":
                     System.out.println("Thoát chương trình! Tạm biệt");
-                    break;
+                    return;
                 default:
                     System.out.println("Lựa chọn không hợp lệ! Chọn lại");
                     break;
