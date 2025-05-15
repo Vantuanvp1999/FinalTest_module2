@@ -33,8 +33,12 @@ public class Main {
                 case "7":
                     contactManager.addToCSV();
                     break;
+                case "8":
+                    System.out.println("Thoát chương trình! Tạm biệt");
+                    break;
                 default:
                     System.out.println("Lựa chọn không hợp lệ! Chọn lại");
+                    break;
             }
 
         }while(choice!="8");

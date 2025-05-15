@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class ContactManager implements IManager<Contact> {
-public static final String FILE_NAME="data/contacts.csv";
+public static final String FILE_NAME="contacts.csv";
 private static File file = new File(FILE_NAME);
 private List<Contact> contacts = new ArrayList<>();
 private Scanner scanner = new Scanner(System.in);
@@ -65,7 +65,7 @@ public void displayContacts(){
          gender = scanner.nextLine();
          if (gender.isEmpty()){
              System.out.println("Giới tính Không được để trống!");
-         } else if (!gender.equals("Nam")||!gender.equals("Nữ")) {
+         } else if (!gender.equals("Nam")&&!gender.equals("Nữ")) {
              System.out.println("Lỗi nhập liệu, yêu cầu nhập lại (Nam/Nữ) ");
          } else {
              break;
@@ -148,7 +148,7 @@ public void displayContacts(){
             gender = scanner.nextLine();
             if (gender.isEmpty()){
                 System.out.println("Giới tính Không được để trống!");
-            } else if (!gender.equals("Nam")||!gender.equals("Nữ")) {
+            } else if (!gender.equals("Nam")&&!gender.equals("Nữ")) {
                 System.out.println("Lỗi nhập liệu, yêu cầu nhập lại (Nam/Nữ) ");
             } else {
                 break;
